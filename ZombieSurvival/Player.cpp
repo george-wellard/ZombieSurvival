@@ -17,7 +17,7 @@ void Player::MovePlayer(sf::Event event)
 		player.move(30, 0);
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	if (sf::Keyboard::Key::A == event.key.code)
 	{
 		player.move(-30, 0);
 	}
