@@ -7,6 +7,10 @@ GameState::GameState(GameDataRef data) : _data(data)
 void GameState::Init()
 {
 	_data->assets.LoadTexture("Player Texture", PLAYER_SPRITE);
+	_data->assets.LoadTexture("Floor Texture", FLOOR_SPRITE);
+
+	background.setTexture(_data->assets.GetTexture("Floor Texture"));
+	background.scale(sf::Vector2f(4, 2));
 
 
 	player = new Player(_data);
@@ -80,6 +84,8 @@ void GameState::Update(float dt)
 void GameState::Draw(float dt)
 {
 	_data->window.clear();
+
+	_data->window.draw(background);
 
 	player->DrawPlayer();
 

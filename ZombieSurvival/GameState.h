@@ -23,6 +23,8 @@ private:
 
 	GameDataRef _data;
 
+	sf::Sprite background;
+
 	sf::Event event;
 	sf::Clock _clock;
 
