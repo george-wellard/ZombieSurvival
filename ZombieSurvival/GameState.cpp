@@ -8,9 +8,10 @@ void GameState::Init()
 {
 	_data->assets.LoadTexture("Player Texture", PLAYER_SPRITE);
 	_data->assets.LoadTexture("Floor Texture", FLOOR_SPRITE);
+	_data->assets.LoadTexture("Zombie Texture", ZOMBIE_SPRITE);
 
-	background.setTexture(_data->assets.GetTexture("Floor Texture"));
-	background.scale(sf::Vector2f(4, 2));
+	floor.setTexture(_data->assets.GetTexture("Floor Texture"));
+	floor.scale(sf::Vector2f(4, 2));
 
 
 	player = new Player(_data);
@@ -85,7 +86,7 @@ void GameState::Draw(float dt)
 {
 	_data->window.clear();
 
-	_data->window.draw(background);
+	_data->window.draw(floor);
 
 	player->DrawPlayer();
 

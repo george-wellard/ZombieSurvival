@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="Barracade.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -162,9 +163,12 @@
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Zombie.cpp" />
+    <ClCompile Include="ZombieSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="Barracade.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Definitions.h" />
     <ClInclude Include="GameState.h" />
@@ -174,6 +178,8 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Zombie.h" />
+    <ClInclude Include="ZombieSpawner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
