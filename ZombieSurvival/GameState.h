@@ -5,6 +5,8 @@
 #include "Definitions.h"
 #include "Player.h"
 #include "Bullet.h"
+#include "Wall.h"
+#include "Barracade.h"
 
 
 class GameState : public State
@@ -24,12 +26,15 @@ private:
 	GameDataRef _data;
 
 	sf::Sprite floor;
+	sf::Sprite grass;
 
 	sf::Event event;
 	sf::Clock _clock;
 
 	Player* player;
 	std::vector<Bullet> bulletVec;
+	std::vector<Wall> wallVec;
+	
 
 	bool isFiring = false;
 

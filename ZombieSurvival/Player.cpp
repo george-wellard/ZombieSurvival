@@ -14,22 +14,22 @@ void Player::MovePlayer(sf::Event event)
 
 	if (sf::Keyboard::Key::D == event.key.code)
 	{
-		player.move(30, 0);
+		player.move(20, 0);
 	}
 
 	if (sf::Keyboard::Key::A == event.key.code)
 	{
-		player.move(-30, 0);
+		player.move(-20, 0);
 	}
 
 	if (sf::Keyboard::Key::W == event.key.code)
 	{
-		player.move(0, -30);
+		player.move(0, -20);
 	}
 
 	if (sf::Keyboard::Key::S == event.key.code)
 	{
-		player.move(0, 30);
+		player.move(0, 20);
 	}
 }
 
