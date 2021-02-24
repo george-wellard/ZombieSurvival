@@ -1,21 +1,21 @@
 #include "Wall.h"
 
-Wall::Wall(GameDataRef data)
+Wall::Wall(GameDataRef data) : _data(data)
 {
-	wall.setTexture(_data->assets.GetTexture("Wall Texture"));
+	wall.setTexture(&_data->assets.GetTexture("Wall Texture"));
 }
 
-void Wall::setPos(float x, float y)
+void Wall::setPosandSize(float xPos, float yPos, float xSize, float ySize)
 {
-	wall.setPosition(x, y);
+	wall.setPosition(xPos, yPos);
+	wall.setSize(sf::Vector2f(xSize, ySize));
 }
-
 void Wall::Draw()
 {
 	_data->window.draw(wall);
 }
 
-sf::Sprite Wall::getSprite()
+sf::RectangleShape Wall::getSprite()
 {
-	return sf::Sprite();
+	return sf::RectangleShape();
 }

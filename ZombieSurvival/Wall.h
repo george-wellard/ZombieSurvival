@@ -8,16 +8,16 @@ public:
 
 	Wall(GameDataRef data);
 
-	void setPos(float x, float y);
+	void setPosandSize(float xPos, float yPos, float xSize, float ySize);
 
 	void Draw();
 
-	sf::Sprite getSprite(); 
+	sf::RectangleShape getSprite(); 
 
 private:
 
 	GameDataRef _data;
 
-	sf::Sprite wall; 
+	sf::RectangleShape wall; 
 };
 

@@ -32,8 +32,12 @@ private:
 	sf::Clock _clock;
 
 	Player* player;
+	Wall* wall;
+	Barracade* barracade;
+
 	std::vector<Bullet> bulletVec;
 	std::vector<Wall> wallVec;
+	std::vector<Barracade> barraVec;
 	
 
 	bool isFiring = false;

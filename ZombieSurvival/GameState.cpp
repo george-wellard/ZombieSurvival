@@ -10,14 +10,51 @@ void GameState::Init()
 	_data->assets.LoadTexture("Floor Texture", FLOOR_SPRITE);
 	_data->assets.LoadTexture("Grass Texture", GRASS_SPRITE);
 	_data->assets.LoadTexture("Zombie Texture", ZOMBIE_SPRITE);
+	_data->assets.LoadTexture("Wall Texture", WALL_SPRITE);
+	_data->assets.LoadTexture("Barracade Texture", BARRICADE_SPRITE);
 
 	floor.setTexture(_data->assets.GetTexture("Floor Texture"));
-	floor.setPosition(150, 200);
-	floor.scale(sf::Vector2f(2, 1));
+	floor.setPosition(200, 200);
+	floor.scale(sf::Vector2f(2, 1.1));
 
 	grass.setTexture(_data->assets.GetTexture("Grass Texture"));
+	grass.scale(sf::Vector2f(3, 3));
 	
+	Wall topWall1(_data); 
+	Wall topWall2(_data);
+	Wall rightWall1(_data);
+	Wall rightWall2(_data);
+	Wall leftWall1(_data);
+	Wall leftWall2(_data);
+	Wall bottomWall1(_data);
+	Wall bottomWall2(_data);
 
+	topWall1.setPosandSize(200, 200, 400, 25);
+	topWall2.setPosandSize(800, 200, 400, 25);
+	rightWall1.setPosandSize(1200, 200, 25, 550);
+
+	leftWall1.setPosandSize(200, 200, 25, 550);
+
+	bottomWall1.setPosandSize(200, 750, 400, 25);
+	bottomWall2.setPosandSize(800, 750, 400, 25);
+
+	wallVec.push_back(topWall1);
+	wallVec.push_back(topWall2);
+	wallVec.push_back(rightWall1);
+	wallVec.push_back(rightWall2);
+	wallVec.push_back(leftWall1);
+	wallVec.push_back(leftWall2);
+	wallVec.push_back(bottomWall1);
+	wallVec.push_back(bottomWall2);
+
+	Barracade topBarracade(_data);
+	Barracade bottomBarracade(_data);
+
+	topBarracade.setPos(600, 200);
+	bottomBarracade.setPos(600, 750);
+
+	barraVec.push_back(topBarracade);
+	barraVec.push_back(bottomBarracade);
 
 	player = new Player(_data);
 }
@@ -96,6 +133,16 @@ void GameState::Draw(float dt)
 	_data->window.draw(floor);
 
 	player->DrawPlayer();
+
+	for (int i = 0; i < wallVec.size(); i++)
+	{
+		wallVec[i].Draw();
+	}
+
+	for (int i = 0; i < barraVec.size(); i++)
+	{
+		barraVec[i].Draw();
+	}
 
 	for (int i = 0; i < bulletVec.size(); i++)
 	{
