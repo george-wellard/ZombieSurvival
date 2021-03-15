@@ -153,12 +153,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AiMap.cpp" />
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="Astar.cpp" />
     <ClCompile Include="Barracade.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="StateMachine.cpp" />
@@ -169,13 +172,16 @@
     <ClCompile Include="ZombieSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AiMap.h" />
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="Astar.h" />
     <ClInclude Include="Barracade.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Definitions.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />

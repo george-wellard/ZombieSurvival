@@ -10,7 +10,15 @@ public:
 
 	void Draw();
 
-	void Move();
+	void Movement();
+
+	void MoveUp();
+
+	void MoveDown();
+
+	void MoveRight();
+
+	void MoveLeft();
 
 	sf::Sprite getSprite();
 

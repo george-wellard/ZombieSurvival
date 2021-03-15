@@ -7,6 +7,8 @@
 #include "Bullet.h"
 #include "Wall.h"
 #include "Barracade.h"
+#include "Zombie.h"
+#include "ZombieSpawner.h"
 
 
 class GameState : public State
@@ -34,10 +36,12 @@ private:
 	Player* player;
 	Wall* wall;
 	Barracade* barracade;
+	ZombieSpawner zombieSpawner;
 
 	std::vector<Bullet> bulletVec;
 	std::vector<Wall> wallVec;
 	std::vector<Barracade> barraVec;
+	std::vector <ZombieSpawner> spawnVec;
 	
 
 	bool isFiring = false;

@@ -33,6 +33,29 @@ void Player::MovePlayer(sf::Event event)
 	}
 }
 
+void Player::StopPlayer(sf::Event event)
+{
+	if (sf::Keyboard::Key::D == event.key.code)
+	{
+		player.move(-20, 0);
+	}
+
+	if (sf::Keyboard::Key::A == event.key.code)
+	{
+		player.move(20, 0);
+	}
+
+	if (sf::Keyboard::Key::W == event.key.code)
+	{
+		player.move(0, 20);
+	}
+
+	if (sf::Keyboard::Key::S == event.key.code)
+	{
+		player.move(0, -20);
+	}
+}
+
 void Player::RotatePlayer(float rot)
 {
 	/*const float PI = 3.14159265;

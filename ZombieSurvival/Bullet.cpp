@@ -11,7 +11,7 @@ void Bullet::setPos(float x, float y)
 	bullet.setPosition(x, y);
 }
 
-void Bullet::Fire(int speed)
+void Bullet::Fire(int speed, float aim)
 {
 	bullet.move(speed, 0);
 }

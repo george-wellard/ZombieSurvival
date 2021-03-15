@@ -56,6 +56,9 @@ void GameState::Init()
 	barraVec.push_back(topBarracade);
 	barraVec.push_back(bottomBarracade);
 
+	ZombieSpawner spawn1();
+	ZombieSpawner spawn2();
+
 	player = new Player(_data);
 }
 
@@ -120,7 +123,7 @@ void GameState::Update(float dt)
 		float aim = atan2(dY, dX);
 		aim *= 180 / PI;
 
-		bulletVec[i].Fire(3);
+		bulletVec[i].Fire(3, aim);
 	}
 }
 

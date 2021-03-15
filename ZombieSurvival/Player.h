@@ -10,6 +10,8 @@ public:
 
 	void MovePlayer(sf::Event event);
 
+	void StopPlayer(sf::Event event);
+
 	void RotatePlayer(float rot);
 
 	void DrawPlayer();

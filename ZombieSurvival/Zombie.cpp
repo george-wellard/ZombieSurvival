@@ -14,9 +14,24 @@ void Zombie::Draw()
 	_data->window.draw(zombie);
 }
 
-void Zombie::Move()
+void Zombie::Movement()
 {
+}
 
+void Zombie::MoveUp()
+{
+}
+
+void Zombie::MoveDown()
+{
+}
+
+void Zombie::MoveRight()
+{
+}
+
+void Zombie::MoveLeft()
+{
 }
 
 sf::Sprite Zombie::getSprite()

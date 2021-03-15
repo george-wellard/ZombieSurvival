@@ -10,7 +10,7 @@ public:
 
 	void setPos(float x, float y); 
 
-	void Fire(int speed);
+	void Fire(int speed, float aim);
 
 	void Draw(); 
 
