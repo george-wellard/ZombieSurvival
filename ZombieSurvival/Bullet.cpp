@@ -2,7 +2,7 @@
 
 Bullet::Bullet(GameDataRef data) : _data(data)
 {
-	bullet.setSize(sf::Vector2f(10, 10));
+	bullet.setRadius(10);
 	bullet.setFillColor(sf::Color::Blue);
 }
 
@@ -21,7 +21,7 @@ void Bullet::Draw()
 	_data->window.draw(bullet);
 }
 
-const sf::RectangleShape& Bullet::getShape() const
+const sf::CircleShape& Bullet::getShape() const
 {
 	return bullet;
 }

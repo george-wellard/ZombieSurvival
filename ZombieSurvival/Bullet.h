@@ -14,12 +14,12 @@ public:
 
 	void Draw(); 
 
-	const sf::RectangleShape& getShape() const;
+	const sf::CircleShape& getShape() const;
 
 private:
 
 	GameDataRef _data; 
 
-	sf::RectangleShape bullet; 
+	sf::CircleShape bullet; 
 };
 
