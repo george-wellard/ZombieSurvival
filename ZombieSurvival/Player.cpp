@@ -12,24 +12,19 @@ Player::Player(GameDataRef data) : _data(data)
 void Player::MovePlayer(sf::Event event)
 {
 
-	if (sf::Keyboard::Key::D == event.key.code)
-	{
-		player.move(20, 0);
-	}
+	int moveSpeed = 4;
 
-	if (sf::Keyboard::Key::A == event.key.code)
-	{
-		player.move(-20, 0);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		player.move(sf::Vector2f(0, -moveSpeed));
 	}
-
-	if (sf::Keyboard::Key::W == event.key.code)
-	{
-		player.move(0, -20);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		player.move(sf::Vector2f(0, moveSpeed));
 	}
-
-	if (sf::Keyboard::Key::S == event.key.code)
-	{
-		player.move(0, 20);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		player.move(sf::Vector2f(-moveSpeed, 0));
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		player.move(sf::Vector2f(moveSpeed, 0));
 	}
 }
 
