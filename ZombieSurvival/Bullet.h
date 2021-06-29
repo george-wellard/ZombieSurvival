@@ -6,11 +6,14 @@ class Bullet
 {
 public: 
 
+	sf::Vector2f currentVelocity;
+	float maxSpeed = 15;
+
 	Bullet(GameDataRef data);
 
 	void setPos(float x, float y); 
 
-	void Fire(int speed, float aim);
+	void Fire(sf::Vector2f speed);
 
 	void Draw(); 
 

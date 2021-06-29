@@ -1,6 +1,6 @@
 #include "Bullet.h"
 
-Bullet::Bullet(GameDataRef data) : _data(data)
+Bullet::Bullet(GameDataRef data) : _data(data) 
 {
 	bullet.setRadius(10);
 	bullet.setFillColor(sf::Color::Blue);
@@ -11,9 +11,9 @@ void Bullet::setPos(float x, float y)
 	bullet.setPosition(x, y);
 }
 
-void Bullet::Fire(int speed, float aim)
+void Bullet::Fire(sf::Vector2f speed)
 {
-	bullet.move(speed, 0);
+	bullet.move(speed);
 }
 
 void Bullet::Draw()

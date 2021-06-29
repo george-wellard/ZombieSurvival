@@ -11,7 +11,6 @@ Player::Player(GameDataRef data) : _data(data)
 
 void Player::MovePlayer(sf::Event event)
 {
-
 	int moveSpeed = 4;
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {

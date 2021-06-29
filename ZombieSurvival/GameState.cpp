@@ -60,6 +60,7 @@ void GameState::Init()
 	ZombieSpawner spawn2();
 
 	player = new Player(_data);
+
 }
 
 void GameState::HandleInput()
@@ -102,28 +103,29 @@ void GameState::HandleInput()
 
 void GameState::Update(float dt)
 {
+
+	sf::Vector2f playerCenter;
+	sf::Vector2f mousePosWindow;
+	sf::Vector2f aimDir;
+	sf::Vector2f aimDirNorm;
+
+	playerCenter = sf::Vector2f(player->GetSprite().getPosition().x, player->GetSprite().getPosition().y);
+	mousePosWindow = sf::Vector2f(sf::Mouse::getPosition());
+	aimDir = mousePosWindow - playerCenter;
+	aimDirNorm = aimDir / sqrt(pow(aimDir.x, 2) + pow(aimDir.y, 2));
+
 	if (isFiring)
 	{
 		Bullet newBullet(_data);
 		newBullet.setPos(player->GetSprite().getPosition().x, player->GetSprite().getPosition().y);
+		newBullet.currentVelocity = aimDirNorm * newBullet.maxSpeed;
 		bulletVec.push_back(newBullet);
 		isFiring = false;
 	}
 
-	for (int i = 0; i < bulletVec.size(); i++)
+	for (size_t i = 0; i < bulletVec.size(); i++) 
 	{
-		mouseX = event.mouseMove.x;
-		mouseY = event.mouseMove.y;
-
-		const float PI = 3.14159265;
-
-		float dX = mouseX - player->GetSprite().getPosition().x;
-		float dY = mouseY - player->GetSprite().getPosition().y;
-
-		float aim = atan2(dY, dX);
-		aim *= 180 / PI;
-
-		bulletVec[i].Fire(3, aim);
+		bulletVec[i].Fire(bulletVec[i].currentVelocity);
 	}
 }
 
