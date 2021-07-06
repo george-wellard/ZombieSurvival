@@ -82,13 +82,13 @@ void GameState::HandleInput()
 			mouseX = event.mouseMove.x;
 			mouseY = event.mouseMove.y;
 
-			const float PI = 3.14159265;
+			const float player_PI = 3.14159265;
 
 			float dX = mouseX - player->GetSprite().getPosition().x;
 			float dY = mouseY - player->GetSprite().getPosition().y;
 
 			float rotation = atan2(dY, dX);
-			rotation *= 180 / PI;
+			rotation *= 180 / player_PI;
 
 			player->RotatePlayer(rotation);
 		}
@@ -117,7 +117,7 @@ void GameState::Update(float dt)
 	if (isFiring)
 	{
 		Bullet newBullet(_data);
-		newBullet.setPos(player->GetSprite().getPosition().x, player->GetSprite().getPosition().y);
+		newBullet.setPos(playerCenter);
 		newBullet.currentVelocity = aimDirNorm * newBullet.maxSpeed;
 		bulletVec.push_back(newBullet);
 		isFiring = false;

@@ -191,6 +191,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Zombie.h" />
+    <ClInclude Include="ZombiePos.h" />
     <ClInclude Include="ZombieSpawner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

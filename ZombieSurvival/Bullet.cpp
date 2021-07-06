@@ -6,9 +6,9 @@ Bullet::Bullet(GameDataRef data) : _data(data)
 	bullet.setFillColor(sf::Color::Blue);
 }
 
-void Bullet::setPos(float x, float y)
+void Bullet::setPos(sf::Vector2f pos)
 {
-	bullet.setPosition(x, y);
+	bullet.setPosition(pos);
 }
 
 void Bullet::Fire(sf::Vector2f speed)

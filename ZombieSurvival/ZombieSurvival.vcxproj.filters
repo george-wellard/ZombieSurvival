@@ -128,5 +128,8 @@
     <ClInclude Include="Neighbour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ZombiePos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

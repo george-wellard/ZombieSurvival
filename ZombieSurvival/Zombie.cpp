@@ -18,23 +18,44 @@ void Zombie::Movement()
 {
 }
 
-void Zombie::MoveUp()
+void Zombie::MoveForward()
 {
+	clearMovement();
+	forward = true;
 }
 
-void Zombie::MoveDown()
+void Zombie::MoveBackwards()
 {
+	clearMovement();
+	backward = true;
 }
 
 void Zombie::MoveRight()
 {
+	clearMovement();
+	right = true;
 }
 
 void Zombie::MoveLeft()
 {
+	clearMovement();
+	left = true;
+}
+
+void Zombie::Stop()
+{
+	clearMovement();
 }
 
 sf::Sprite Zombie::getSprite()
 {
 	return sf::Sprite();
+}
+
+void Zombie::clearMovement()
+{
+	forward = false;
+	backward = false;
+	right = false;
+	left = false;
 }

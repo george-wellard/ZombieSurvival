@@ -11,7 +11,7 @@ public:
 
 	Bullet(GameDataRef data);
 
-	void setPos(float x, float y); 
+	void setPos(sf::Vector2f pos); 
 
 	void Fire(sf::Vector2f speed);
 
